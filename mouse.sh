@@ -136,7 +136,8 @@ NEXT_ACTION_TIME=$((RANDOM % 5 + 2))
 while true; do
   # Skip actions between 3AM and 9PM
   HOUR=$(date +%H)
-  if (( 3 <= HOUR && HOUR < 21 )); then
+  log "[INFO] Current hour is $HOUR"
+  if (( HOUR < 20 && HOUR > 4 )); then
     sleep 60
     continue
   fi
